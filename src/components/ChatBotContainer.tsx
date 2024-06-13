@@ -1,4 +1,4 @@
-import { useEffect, useState, useRef, MouseEvent } from "react";
+import { useEffect, useState, useRef, MouseEvent, JSX } from "react";
 
 import ChatBotHeader from "./ChatBotHeader/ChatBotHeader";
 import ChatBotBody from "./ChatBotBody/ChatBotBody";
@@ -39,10 +39,10 @@ const ChatBotContainer = ({ flow }: { flow: Flow }) => {
 	const { paths, setPaths } = usePaths();
 
 	// references chat body for auto-scrolling
-	const chatBodyRef = useRef<HTMLDivElement>(null);
+	const chatBodyRef = useRef<HTMLDivElement | null>(null);
 
 	// references textarea for user input
-	const inputRef = useRef<HTMLTextAreaElement | HTMLInputElement>(null);
+	const inputRef = useRef<HTMLTextAreaElement | HTMLInputElement | null>(null);
 
 	// references a temporarily stored user input for use in attribute params
 	const paramsInputRef = useRef<string>("");
@@ -55,7 +55,7 @@ const ChatBotContainer = ({ flow }: { flow: Flow }) => {
 
 	// audio to play for notifications
 	const audioContextRef = useRef<AudioContext | null>(null);
-	const audioBufferRef = useRef<AudioBuffer>();
+	const audioBufferRef = useRef<AudioBuffer>(null);
 	const gainNodeRef = useRef<AudioNode | null>(null);
 
 	// tracks if user has interacted with page

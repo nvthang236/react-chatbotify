@@ -1,4 +1,4 @@
-import { ChangeEvent, RefObject, useEffect, useState } from "react";
+import { ChangeEvent, RefObject, useEffect, useState, JSX } from "react";
 
 import { useBotOptions } from "../../../context/BotOptionsContext";
 import { usePaths } from "../../../context/PathsContext";
@@ -28,7 +28,7 @@ const FileAttachmentButton = ({
 	getPrevPath,
 	handleActionInput
 }: {
-	inputRef: RefObject<HTMLTextAreaElement | HTMLInputElement>;
+	inputRef: RefObject<HTMLTextAreaElement | HTMLInputElement | null>;
 	flow: Flow;
 	injectMessage: (content: string | JSX.Element, sender?: string) => Promise<void>;
 	streamMessage: (content: string | JSX.Element, sender?: string) => Promise<void>;

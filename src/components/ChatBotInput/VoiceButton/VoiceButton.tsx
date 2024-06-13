@@ -23,7 +23,7 @@ const VoiceButton = ({
 	triggerSendVoiceInput,
 	setInputLength
 }: {
-	inputRef: RefObject<HTMLTextAreaElement | HTMLInputElement>;
+	inputRef: RefObject<HTMLTextAreaElement | HTMLInputElement | null>;
 	textAreaDisabled: boolean;
 	voiceToggledOn: boolean;
 	handleToggleVoice: () => void;

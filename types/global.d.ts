@@ -20,3 +20,13 @@ declare global {
 		ongeometrychange: EventHandler;
 	}
 }
+
+declare module "react/jsx-runtime" {
+	namespace JSX {
+		interface IntrinsicElements {
+			"my-element": {
+				myElementProps: string;
+			};
+		}
+	}
+}

@@ -1,3 +1,5 @@
+import { JSX } from "react";
+
 import UserCheckboxes from "../../components/UserCheckboxes/UserCheckboxes";
 import { Block } from "../../types/Block";
 import { Flow } from "../../types/Flow";

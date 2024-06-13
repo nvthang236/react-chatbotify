@@ -1,4 +1,4 @@
-
+import { JSX } from "react";
 
 import UserOptions from "../../components/UserOptions/UserOptions";
 import { Block } from "../../types/Block";

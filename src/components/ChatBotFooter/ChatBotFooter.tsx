@@ -1,5 +1,5 @@
 
-import { RefObject } from "react";
+import { RefObject, JSX } from "react";
 
 import EmojiPicker from "./EmojiPicker/EmojiPicker";
 import FileAttachmentButton from "./FileAttachmentButton/FileAttachmentButton";
@@ -32,7 +32,7 @@ const ChatBotFooter = ({
 	getPrevPath,
 	handleActionInput
 }: {
-	inputRef: RefObject<HTMLTextAreaElement | HTMLInputElement>;
+	inputRef: RefObject<HTMLTextAreaElement | HTMLInputElement | null>;
 	flow: Flow;
 	textAreaDisabled: boolean;
 	injectMessage: (content: string | JSX.Element, sender?: string) => Promise<void>;

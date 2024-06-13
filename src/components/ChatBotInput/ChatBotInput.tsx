@@ -42,7 +42,7 @@ const ChatBotInput = ({
 	hasFlowStarted,
 	setHasFlowStarted
 }: {
-	inputRef: RefObject<HTMLTextAreaElement | HTMLInputElement>;
+	inputRef: RefObject<HTMLTextAreaElement | HTMLInputElement | null>;
 	textAreaDisabled: boolean;
 	textAreaSensitiveMode: boolean;
 	voiceToggledOn: boolean;

@@ -44,8 +44,8 @@
   },
   "devDependencies": {
     "@types/dom-speech-recognition": "^0.0.4",
-    "@types/react": "^18.2.14",
-    "@types/react-dom": "^18.2.6",
+    "@types/react": "npm:types-react@rc",
+    "@types/react-dom": "npm:types-react-dom@rc",
     "@typescript-eslint/eslint-plugin": "^5.60.1",
     "@vitejs/plugin-react": "^4.0.4",
     "chromedriver": "^125.0.0",
@@ -54,14 +54,22 @@
     "eslint-plugin-jsx-a11y": "^6.7.1",
     "eslint-plugin-react": "^7.32.2",
     "husky": "^8.0.0",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
+    "react": "19.0.0-rc-dfd30974ab-20240613",
+    "react-dom": "19.0.0-rc-dfd30974ab-20240613",
     "selenium-webdriver": "^4.21.0",
     "typescript": "^5.1.6",
     "vite": "^4.5.2",
     "vite-plugin-dts": "^3.4.0",
     "vite-plugin-eslint": "^1.8.1",
     "vite-plugin-svgr": "^3.2.0"
+  },
+  "peerDependencies": {
+    "react": ">=16.14.0 <20.0.0",
+    "react-dom": ">=16.14.0 <20.0.0"
+  },
+  "overrides": {
+    "@types/react": "npm:types-react@rc",
+    "@types/react-dom": "npm:types-react-dom@rc"
   },
   "browserslist": {
     "production": [

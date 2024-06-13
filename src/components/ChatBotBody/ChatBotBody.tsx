@@ -33,7 +33,7 @@ const ChatBotBody = ({
 	unreadCount,
 	setUnreadCount,
 }: {
-	chatBodyRef: RefObject<HTMLDivElement>;
+	chatBodyRef: RefObject<HTMLDivElement | null>;
 	isBotTyping: boolean;
 	isLoadingChatHistory: boolean;
 	chatScrollHeight: number;

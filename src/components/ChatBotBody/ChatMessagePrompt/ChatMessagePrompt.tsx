@@ -18,7 +18,7 @@ const ChatMessagePrompt = ({
 	setIsScrolling,
 	unreadCount,
 }: {
-	chatBodyRef: RefObject<HTMLDivElement>;
+	chatBodyRef: RefObject<HTMLDivElement | null>;
     isScrolling: boolean;
     setIsScrolling: Dispatch<SetStateAction<boolean>>;
 	unreadCount: number;

@@ -1,3 +1,5 @@
+import { JSX } from "react";
+
 /**
  * Defines the configurable options/styles for the chat bot.
  */

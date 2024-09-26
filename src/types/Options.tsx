@@ -142,6 +142,7 @@ export type Options = {
 	chatInputAreaDisabledStyle?: React.CSSProperties;
 	userBubbleStyle?: React.CSSProperties;
 	botBubbleStyle?: React.CSSProperties;
+	botAvatarStyle?: React.CSSProperties;
 	botOptionStyle?: React.CSSProperties;
 	botOptionHoveredStyle?: React.CSSProperties;
 	botCheckboxRowStyle?: React.CSSProperties;

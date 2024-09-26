@@ -148,20 +148,23 @@ const ChatBotBody = ({
 	const renderUserMessage = (message: Message) => {
 		return (
 			<>
-				{botOptions?.userBubble?.dangerouslySetInnerHtml ?
-					<div
-						style={{...userBubbleStyle, display: "inline" }}
-						className={`rcb-user-message ${userBubbleEntryStyle}`}
-						dangerouslySetInnerHTML={{__html: message.content}}
-					/>
-					:
-					<div
-						style={userBubbleStyle}
-						className={`rcb-user-message ${userBubbleEntryStyle}`}
-					>
-						{message.content}
-					</div>
-				}
+				{typeof message.content === "string" ? (
+					botOptions?.userBubble?.dangerouslySetInnerHtml ?
+						<div
+							style={{...userBubbleStyle, display: "inline" }}
+							className={`rcb-user-message ${userBubbleEntryStyle}`}
+							dangerouslySetInnerHTML={{__html: message.content}}
+						/>
+						:
+						<div
+							style={userBubbleStyle}
+							className={`rcb-user-message ${userBubbleEntryStyle}`}
+						>
+							{message.content}
+						</div>
+				) : (
+					message.content
+				)}
 				{botOptions.userBubble?.showAvatar &&
 					<div 
 						style={{backgroundImage: `url(${botOptions.userBubble?.avatar})`}}
@@ -182,24 +185,27 @@ const ChatBotBody = ({
 			<>
 				{botOptions.botBubble?.showAvatar &&
 					<div
-						style={{backgroundImage: `url(${botOptions.botBubble?.avatar})`}}
+						style={{...botOptions.botAvatarStyle, backgroundImage: `url(${botOptions.botBubble?.avatar})`}}
 						className="rcb-message-bot-avatar"
 					/>
 				}
-				{botOptions?.botBubble?.dangerouslySetInnerHtml ?
-					<div
-						style={{...botBubbleStyle, display: "inline" }}
-						className={`rcb-bot-message ${botBubbleEntryStyle}`}
-						dangerouslySetInnerHTML={{__html: message.content}}
-					/>
-					:
-					<div
-						style={botBubbleStyle}
-						className={`rcb-bot-message ${botBubbleEntryStyle}`}
-					>
-						{message.content}
-					</div>
-				}
+				{typeof message.content === "string" ? (
+					botOptions?.botBubble?.dangerouslySetInnerHtml ?
+						<div
+							style={{...botBubbleStyle, display: "inline" }}
+							className={`rcb-bot-message ${botBubbleEntryStyle}`}
+							dangerouslySetInnerHTML={{__html: message.content}}
+						/>
+						:
+						<div
+							style={botBubbleStyle}
+							className={`rcb-bot-message ${botBubbleEntryStyle}`}
+						>
+							{message.content}
+						</div>
+				) : (
+					message.content
+				)}
 			</>
 		);
 	};
@@ -212,7 +218,7 @@ const ChatBotBody = ({
 			onScroll={updateIsScrolling}
 		>
 			{messages.map((message, index) => {
-				if (typeof message.content !== "string") {
+				if (message.sender === "system") {
 					return <div key={index}>{message.content}</div>;
 				}
 		
@@ -232,7 +238,10 @@ const ChatBotBody = ({
 				<div className="rcb-bot-message-container">
 					{botOptions.botBubble?.showAvatar &&
 						<div 
-							style={{backgroundImage: `url(${botOptions.botBubble?.avatar})`}}
+							style={{
+								...botOptions.botAvatarStyle,
+								backgroundImage: `url(${botOptions.botBubble?.avatar})`,
+							}}
 							className="rcb-message-bot-avatar"
 						/>
 					}

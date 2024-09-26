@@ -173,6 +173,7 @@ const defaultOptions = {
 	chatInputAreaDisabledStyle: {},
 	userBubbleStyle: {},
 	botBubbleStyle: {},
+	botAvatarStyle: {},
 	botOptionStyle: {},
 	botOptionHoveredStyle: {},
 	botCheckboxRowStyle: {},
